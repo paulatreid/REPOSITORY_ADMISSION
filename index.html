@@ -1,0 +1,826 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="plugins/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <script src="plugins/jquery-3.5.1.slim.min.js"></script>
+    <script src="plugins/popper.min.js"></script>
+    <script src="plugins/bootstrap.min.js"></script>
+
+    <!-- For desktop -->
+    <div id="containerDesktop" class="container">
+        <!-- Search bar for desktop -->
+        <form class="mt-3">
+            <div class="form-row">
+                <img src="files/icon_calender.svg" class="img-fluid calendar-icon ml-1 mr-3">
+                <input type="date" class="form-control col-md-2">
+                <div class="text-center"><label class="col-form-label">&nbsp-&nbsp</label></div>
+                <input type="date" class="form-control col-md-2">
+                <button id="searchButtonDesktop" type="submit" class="btn btn-light ml-2"><img
+                        src="files/icon_search.svg" class="search-icon">
+                </button>
+            </div>
+        </form>
+
+        <!-- Count of mails bar for desktop -->
+        <div class="mt-3">
+            <span class="font-weight-bold">Results: </span><span id="mailCountDesktop"
+                class="font-weight-bold count-mail">0</span><span class="font-weight-bold">mail</span><span
+                id="mailCountDesktopPluralMark" class="font-weight-bold d-none">s</span>
+        </div>
+
+        <hr id="dividerDesktop" />
+
+        <div id="logoDesktop" class="text-center mt-5 mb-5">
+            <img src="files/logo.png" class="img-fluid">
+        </div>
+
+        <!-- Mail list for desktop -->
+        <table id="mailListDesktop" class="table d-none">
+            <thead class="thead-light">
+                <tr>
+                    <th id="mailListDesktopFrom" scope="col" class="text-muted"><span>From</span><img
+                            id="mailListDesktopFromArrow" src="files/icon_arrow01.svg"
+                            class="img-fluid icon-arrow flip-icon d-none">
+                    </th>
+                    <th id="mailListDesktopTo" scope="col" class="text-muted"><span>To</span><img
+                            id="mailListDesktopToArrow" src="files/icon_arrow01.svg"
+                            class="img-fluid icon-arrow flip-icon d-none"></th>
+                    <th scope="col"></th>
+                    <th id="mailListDesktopHeadSubject" scope="col" class="text-muted"><span>Subject</span><img
+                            id="mailListDesktopHeadSubjectArrow" src="files/icon_arrow01.svg"
+                            class="img-fluid icon-arrow flip-icon d-none">
+                    </th>
+                    <th scope="col"></th>
+                    <th id="mailListDesktopDate" scope="col" class="text-muted"><span>Date</span><img
+                            id="mailListDesktopDateArrow" src="files/icon_arrow01.svg"
+                            class="img-fluid icon-arrow flip-icon d-none">
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="mailListDesktopTbody">
+                <tr>
+                    <td id="mailListDesktopFrom1" class="text-truncate title-width-from-to">aaa@example.com</td>
+                    <td id="mailListDesktopTo1" class="text-truncate title-width-from-to">zzz.zzz@example.com</td>
+                    <td><span class="badge badge-dark"></span></td>
+                    <td id="mailListDesktopSubject1" class="text-truncate title-width-subject">[ HR-888 ] Notice of
+                        official announcement </td>
+                    <td><img src="files/icon_clip.svg" class="img-fluid icon-attachment d-none"></td>
+                    <td>0:20</td>
+                    <span id="mailListDesktopDate1" class="d-none">1607354400000</span>
+                </tr>
+                <tr>
+                    <td id="mailListDesktopFrom2" class="text-truncate title-width-from-to">bbb.bbbb@example.com</td>
+                    <td id="mailListDesktopTo2" class="text-truncate title-width-from-to">yyy@example.com</td>
+                    <td><span class="badge badge-dark"></span></td>
+                    <td id="mailListDesktopSubject2" class="text-truncate title-width-subject">[web:333] "Web Contact"
+                    </td>
+                    <td><img src="files/icon_clip.svg" class="img-fluid icon-attachment d-none"></td>
+                    <td>0:10</td>
+                    <span id="mailListDesktopDate2" class="d-none">1607353800000</span>
+                </tr>
+                <tr>
+                    <td id="mailListDesktopFrom3" class="text-truncate title-width-from-to">ccc@example.com</td>
+                    <td id="mailListDesktopTo3" class="text-truncate title-width-from-to">xxx@example.com</td>
+                    <td><span class="badge badge-dark">+1</span></td>
+                    <td id="mailListDesktopSubject3" class="text-truncate title-width-subject">Happy New Year! Greetings
+                        for the New Year. </td>
+                    <td><img src="files/icon_clip.svg" class="img-fluid icon-attachment"></td>
+                    <td>0:00</td>
+                    <span id="mailListDesktopDate3" class="d-none">1607353200000</span>
+                </tr>
+                <tr>
+                    <td id="mailListDesktopFrom4" class="text-truncate title-width-from-to">ddd.dddd@example.com</td>
+                    <td id="mailListDesktopTo4" class="text-truncate title-width-from-to">vvv.vvv@example.com</td>
+                    <td><span class="badge badge-dark">+1</span></td>
+                    <td id="mailListDesktopSubject4" class="text-truncate title-width-subject">[HR-887(Revised: Office
+                        Expansion Project Team)]
+                        Notice of off... </td>
+                    <td><img src="files/icon_clip.svg" class="img-fluid icon-attachment d-none"></td>
+                    <td>Jan 01</td>
+                    <span id="mailListDesktopDate4" class="d-none">1577818800000</span>
+                </tr>
+                <tr>
+                    <td id="mailListDesktopFrom5" class="text-truncate title-width-from-to">eee@example.com</td>
+                    <td id="mailListDesktopTo5" class="text-truncate title-width-from-to">sss@example.com</td>
+                    <td><span class="badge badge-dark">+2</span></td>
+                    <td id="mailListDesktopSubject5" class="text-truncate title-width-subject">[Github] Logout page
+                    </td>
+                    <td><img src="files/icon_clip.svg" class="img-fluid icon-attachment d-none"></td>
+                    <td>Jan 01</td>
+                    <span id="mailListDesktopDate5" class="d-none">1577815200000</span>
+                </tr>
+                <tr>
+                    <td id="mailListDesktopFrom6" class="text-truncate title-width-from-to">fff.ffff@example.com</td>
+                    <td id="mailListDesktopTo6" class="text-truncate title-width-from-to">qqq.qqq@example.com</td>
+                    <td><span class="badge badge-dark"></span></td>
+                    <td id="mailListDesktopSubject6" class="text-truncate title-width-subject">［dev］ Postfix 3.1.12 /
+                        3.2.9 / 3.3.4 / 3.4.5 </td>
+                    <td><img src="files/icon_clip.svg" class="img-fluid icon-attachment d-none"></td>
+                    <td>Jan 01</td>
+                    <span id="mailListDesktopDate6" class="d-none">1577811600000</span>
+                </tr>
+                <tr>
+                    <td id="mailListDesktopFrom7" class="text-truncate title-width-from-to">ggg@example.com</td>
+                    <td id="mailListDesktopTo7" class="text-truncate title-width-from-to">ppp@example.com</td>
+                    <td><span class="badge badge-dark"></span></td>
+                    <td id="mailListDesktopSubject7" class="text-truncate title-width-subject">Re: [Github] Brush-up on
+                        loading animation </td>
+                    <td><img src="files/icon_clip.svg" class="img-fluid icon-attachment d-none"></td>
+                    <td>Jan 01</td>
+                    <span id="mailListDesktopDate7" class="d-none">1577808000000</span>
+                </tr>
+                <tr>
+                    <td id="mailListDesktopFrom8" class="text-truncate title-width-from-to">hhh.hhh@example.com</td>
+                    <td id="mailListDesktopTo8" class="text-truncate title-width-from-to">ooo.ooo@example.com</td>
+                    <td><span class="badge badge-dark"></span></td>
+                    <td id="mailListDesktopSubject8" class="text-truncate title-width-subject">Workplace Summary for
+                        sample, Inc.: Jun 2 - Jun 9
+                    </td>
+                    <td><img src="files/icon_clip.svg" class="img-fluid icon-attachment"></td>
+                    <td>Jan 01</td>
+                    <span id="mailListDesktopDate8" class="d-none">1577804400000</span>
+                </tr>
+                <tr>
+                    <td id="mailListDesktopFrom9" class="text-truncate title-width-from-to">iii@example.com</td>
+                    <td id="mailListDesktopTo9" class="text-truncate title-width-from-to">nnn@example.com</td>
+                    <td><span class="badge badge-dark"></span></td>
+                    <td id="mailListDesktopSubject9" class="text-truncate title-width-subject">I love you </td>
+                    <td><img src="files/icon_clip.svg" class="img-fluid icon-attachment"></td>
+                    <td>2019/12/31</td>
+                    <span id="mailListDesktopDate9" class="d-none">1577732400000</span>
+                </tr>
+                <tr>
+                    <td id="mailListDesktopFrom10" class="text-truncate title-width-from-to">Pablo-Diego-@example.com
+                    </td>
+                    <td id="mailListDesktopTo10" class="text-truncate title-width-from-to">
+                        Pablo-Diego-José-Francisc@example.com,
+                        Pablo-Diego-@example.com</td>
+                    <td><span class="badge badge-dark"></span></td>
+                    <td id="mailListDesktopSubject10" class="text-truncate title-width-subject">[info:888] ABC EQUIPMENT
+                        COMPANY</td>
+                    <td><img src="files/icon_clip.svg" class="img-fluid icon-attachment d-none"></td>
+                    <td>2019/12/3</td>
+                    <span id="mailListDesktopDate10" class="d-none">1575313200000</span>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Search bar and count of mails bar for mobile -->
+    <div id="searchCountSectionsMobile" class="container">
+        <!-- Search bar for mobile -->
+        <form class="mt-3">
+            <div class="form-row">
+                <input type="date" class="form-control-sm">
+                <div class="text-center"><label class="search-hyphen-mobile">-</label></div>
+                <input type="date" class="form-control-sm">
+                <button id="searchButtonMobile" type="submit" class="btn btn-light btn-sm ml-2"><img
+                        src="files/icon_search.svg" class="search-icon-mobile">
+                </button>
+            </div>
+        </form>
+
+        <!-- Count of mails bar for mobile -->
+        <div class="mt-2">
+            <span class="font-weight-bold count-mail-mobile">Results: </span><span id="mailCountMobile"
+                class="font-weight-bold">0</span><span class="font-weight-bold count-mail-mobile">mail</span><span
+                id="mailCountMobilePluralMark" class="font-weight-bold count-mail-mobile d-none">s</span>
+        </div>
+    </div>
+
+    <!-- Mail list for mobile -->
+    <div id="mailListSectionsMobile" class="">
+        <hr id="dividerMobile" class="" />
+
+        <div id="logoMobile" class="text-center mt-5 mb-5">
+            <img src="files/logo.png" class="img-fluid">
+        </div>
+
+        <table id="mailListMobile" class="table d-none">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col-sm" id="tableHeaderMobile">
+                        <div id="mailListMobileFrom" class="d-inline-block"><span id="mailListMobileFromLabel"
+                                class="count-mail-mobile icon-left-margin text-muted">From</span><img
+                                id="mailListMobileFromArrow" src="files/icon_arrow01.svg"
+                                class="img-fluid icon-arrow icon-arrow-right-margin invisible"></div>
+                        <span class="title-divider-mobile">|</span>
+                        <div id="mailListMobileTo" class="d-inline-block"><span id="mailListMobileToLabel"
+                                class="count-mail-mobile icon-left-margin text-muted">To</span><img
+                                id="mailListMobileToArrow" src="files/icon_arrow01.svg"
+                                class="img-fluid icon-arrow icon-arrow-right-margin invisible">
+                        </div>
+                        <span class="title-divider-mobile">|</span>
+                        <div id="mailListMobileHeadSubject" class="d-inline-block"><span id="mailListMobileHeadSubjectLabel"
+                                class="count-mail-mobile icon-left-margin text-muted">Subject</span><img
+                                id="mailListMobileHeadSubjectArrow" src="files/icon_arrow01.svg"
+                                class="img-fluid icon-arrow icon-arrow-right-margin invisible"></div>
+                        <span class="title-divider-mobile">|</span>
+                        <div id="mailListMobileDate" class="d-inline-block"><span id="mailListMobileDateLabel"
+                                class="count-mail-mobile icon-left-margin text-muted">Date</span><img
+                                id="mailListMobileDateArrow" src="files/icon_arrow01.svg"
+                                class="img-fluid icon-arrow icon-arrow-right-margin invisible"></div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="mailListMobileTbody">
+                <tr>
+                    <td id="mailListMobileItem1">
+                        <div>
+                            <img src="files/icon_mail_sp.svg" class="img-fluid icon-mail-sp">
+                            <div class="d-inline-block height-from-to-mobile">
+                                <div>
+                                    <span
+                                        class="font-weight-bold d-inline-block text-truncate address-from-to-mobile">aaa@example.com</span>
+                                    <span class="float-right"><img src="files/icon_clip.svg"
+                                            class="img-fluid icon-attachment-mobile d-none">
+                                        <span>0:20</span>
+                                        <img src="files/icon_arrow02.svg" class="icon-chevron-compact-right">
+                                    </span>
+                                    <span class="d-none">1607354400000</span>
+                                </div>
+                                <div>
+                                    <span
+                                        class="d-inline-block text-truncate address-from-to-mobile">zzz.zzz@example.com</span>
+                                    <span class="float-right"><span class="badge badge-dark"></span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="mailListMobileSubject1" class="d-inline-block text-truncate title-mobile">
+                            [ HR-888 ] Notice of official announcement
+                        </div>
+                        <div id="mailListMobileContent1" class="d-none">
+                            We would like to announce that our office
+                            will be closed from August 11 from 19, 2018 due to
+                            summer holiday.
+                            We will respond your email when we return to the office on August 20, 2018.
+                            Thank you very much for your kind understanding.
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="mailListMobileItem2">
+                        <div>
+                            <img src="files/icon_mail_sp.svg" class="img-fluid icon-mail-sp">
+                            <div class="d-inline-block height-from-to-mobile">
+                                <div>
+                                    <span
+                                        class="font-weight-bold d-inline-block text-truncate address-from-to-mobile">bbb.bbbb@example.com</span>
+                                    <span class="float-right"><img src="files/icon_clip.svg"
+                                            class="img-fluid icon-attachment-mobile">
+                                        <span>0:10</span>
+                                        <img src="files/icon_arrow02.svg" class="icon-chevron-compact-right">
+                                    </span>
+                                    <span class="d-none">1607354400000</span>
+                                </div>
+                                <div>
+                                    <span
+                                        class="d-inline-block text-truncate address-from-to-mobile">yyy@example.com</span>
+                                    <span class="float-right"><span class="badge badge-dark">+1</span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="mailListMobileSubject2" class="d-inline-block text-truncate title-mobile">
+                            [web:333] "Web Contact"
+                        </div>
+                        <div id="mailListMobileContent2" class="d-none">
+                            We would like to announce that our office
+                            will be closed from August 11 from 19, 2018 due to
+                            summer holiday.
+                            We will respond your email when we return to the office on August 20, 2018.
+                            Thank you very much for your kind understanding.
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="mailListMobileItem3">
+                        <div>
+                            <img src="files/icon_mail_sp.svg" class="img-fluid icon-mail-sp">
+                            <div class="d-inline-block height-from-to-mobile">
+                                <div>
+                                    <span
+                                        class="font-weight-bold d-inline-block text-truncate address-from-to-mobile">ccc@example.com</span>
+                                    <span class="float-right"><img src="files/icon_clip.svg"
+                                            class="img-fluid icon-attachment-mobile">
+                                        <span>0:00</span>
+                                        <img src="files/icon_arrow02.svg" class="icon-chevron-compact-right">
+                                    </span>
+                                    <span class="d-none">1607353200000</span>
+                                </div>
+                                <div>
+                                    <span
+                                        class="d-inline-block text-truncate address-from-to-mobile">xxx@example.com</span>
+                                    <span class="float-right"><span class="badge badge-dark">+1</span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="mailListMobileSubject3" class="d-inline-block text-truncate title-mobile">
+                            Happy New Year! Greetings for the New Year.
+                        </div>
+                        <div id="mailListMobileContent3" class="d-none">
+                            We would like to announce that our office
+                            will be closed from August 11 from 19, 2018 due to
+                            summer holiday.
+                            We will respond your email when we return to the office on August 20, 2018.
+                            Thank you very much for your kind understanding.
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="mailListMobileItem4">
+                        <div>
+                            <img src="files/icon_mail_sp.svg" class="img-fluid icon-mail-sp">
+                            <div class="d-inline-block height-from-to-mobile">
+                                <div>
+                                    <span
+                                        class="font-weight-bold d-inline-block text-truncate address-from-to-mobile">ddd.dddd@example.com</span>
+                                    <span class="float-right"><img src="files/icon_clip.svg"
+                                            class="img-fluid icon-attachment-mobile d-none">
+                                        <span>Jan 01</span>
+                                        <img src="files/icon_arrow02.svg" class="icon-chevron-compact-right">
+                                    </span>
+                                    <span class="d-none">1577818800000</span>
+                                </div>
+                                <div>
+                                    <span
+                                        class="d-inline-block text-truncate address-from-to-mobile">vvv.vvv@example.com</span>
+                                    <span class="float-right"><span class="badge badge-dark">+1</span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="mailListMobileSubject4" class="d-inline-block text-truncate title-mobile">
+                            [HR-887(Revised: Office Expansion Project Team)] Notice of off...
+                        </div>
+                        <div id="mailListMobileContent4" class="d-none">
+                            We would like to announce that our office
+                            will be closed from August 11 from 19, 2018 due to
+                            summer holiday.
+                            We will respond your email when we return to the office on August 20, 2018.
+                            Thank you very much for your kind understanding.
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="mailListMobileItem5">
+                        <div>
+                            <img src="files/icon_mail_sp.svg" class="img-fluid icon-mail-sp">
+                            <div class="d-inline-block height-from-to-mobile">
+                                <div>
+                                    <span
+                                        class="font-weight-bold d-inline-block text-truncate address-from-to-mobile">eee@example.com</span>
+                                    <span class="float-right"><img src="files/icon_clip.svg"
+                                            class="img-fluid icon-attachment-mobile d-none">
+                                        <span>Jan 01</span>
+                                        <img src="files/icon_arrow02.svg" class="icon-chevron-compact-right">
+                                    </span>
+                                    <span class="d-none">1577815200000</span>
+                                </div>
+                                <div>
+                                    <span
+                                        class="d-inline-block text-truncate address-from-to-mobile">sss@example.com</span>
+                                    <span class="float-right"><span class="badge badge-dark">+2</span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="mailListMobileSubject5" class="d-inline-block text-truncate title-mobile">
+                            [Github] Logout page
+                        </div>
+                        <div id="mailListMobileContent5" class="d-none">
+                            We would like to announce that our office
+                            will be closed from August 11 from 19, 2018 due to
+                            summer holiday.
+                            We will respond your email when we return to the office on August 20, 2018.
+                            Thank you very much for your kind understanding.
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="mailListMobileItem6">
+                        <div>
+                            <img src="files/icon_mail_sp.svg" class="img-fluid icon-mail-sp">
+                            <div class="d-inline-block height-from-to-mobile">
+                                <div>
+                                    <span
+                                        class="font-weight-bold d-inline-block text-truncate address-from-to-mobile">fff.ffff@example.com</span>
+                                    <span class="float-right"><img src="files/icon_clip.svg"
+                                            class="img-fluid icon-attachment-mobile d-none">
+                                        <span>0:20</span>
+                                        <img src="files/icon_arrow02.svg" class="icon-chevron-compact-right">
+                                    </span>
+                                    <span class="d-none">1577811600000</span>
+                                </div>
+                                <div>
+                                    <span
+                                        class="d-inline-block text-truncate address-from-to-mobile">qqq.qqq@example.com</span>
+                                    <span class="float-right"><span class="badge badge-dark"></span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="mailListMobileSubject6" class="d-inline-block text-truncate title-mobile">
+                            ［dev］ Postfix 3.1.12 / 3.2.9 / 3.3.4 / 3.4.5
+                        </div>
+                        <div id="mailListMobileContent6" class="d-none">
+                            We would like to announce that our office
+                            will be closed from August 11 from 19, 2018 due to
+                            summer holiday.
+                            We will respond your email when we return to the office on August 20, 2018.
+                            Thank you very much for your kind understanding.
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="mailListMobileItem7">
+                        <div>
+                            <img src="files/icon_mail_sp.svg" class="img-fluid icon-mail-sp">
+                            <div class="d-inline-block height-from-to-mobile">
+                                <div>
+                                    <span
+                                        class="font-weight-bold d-inline-block text-truncate address-from-to-mobile">ggg@example.com</span>
+                                    <span class="float-right"><img src="files/icon_clip.svg"
+                                            class="img-fluid icon-attachment-mobile">
+                                        <span>Jan 01</span>
+                                        <img src="files/icon_arrow02.svg" class="icon-chevron-compact-right">
+                                    </span>
+                                    <span class="d-none">1577808000000</span>
+                                </div>
+                                <div>
+                                    <span
+                                        class="d-inline-block text-truncate address-from-to-mobile">ppp@example.com</span>
+                                    <span class="float-right"><span class="badge badge-dark"></span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="mailListMobileSubject7" class="d-inline-block text-truncate title-mobile">
+                            Re: [Github] Brush-up on loading animation
+                        </div>
+                        <div id="mailListMobileContent7" class="d-none">
+                            We would like to announce that our office
+                            will be closed from August 11 from 19, 2018 due to
+                            summer holiday.
+                            We will respond your email when we return to the office on August 20, 2018.
+                            Thank you very much for your kind understanding.
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="mailListMobileItem8">
+                        <div>
+                            <img src="files/icon_mail_sp.svg" class="img-fluid icon-mail-sp">
+                            <div class="d-inline-block height-from-to-mobile">
+                                <div>
+                                    <span
+                                        class="font-weight-bold d-inline-block text-truncate address-from-to-mobile">hhh.hhh@example.com</span>
+                                    <span class="float-right"><img src="files/icon_clip.svg"
+                                            class="img-fluid icon-attachment-mobile">
+                                        <span>Jan 01</span>
+                                        <img src="files/icon_arrow02.svg" class="icon-chevron-compact-right">
+                                    </span>
+                                    <span class="d-none">1577804400000</span>
+                                </div>
+                                <div>
+                                    <span
+                                        class="d-inline-block text-truncate address-from-to-mobile">ooo.ooo@example.com</span>
+                                    <span class="float-right"><span class="badge badge-dark"></span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="mailListMobileSubject8" class="d-inline-block text-truncate title-mobile">
+                            Workplace Summary for sample, Inc.: Jun 2 - Jun 9
+                        </div>
+                        <div id="mailListMobileContent8" class="d-none">
+                            We would like to announce that our office
+                            will be closed from August 11 from 19, 2018 due to
+                            summer holiday.
+                            We will respond your email when we return to the office on August 20, 2018.
+                            Thank you very much for your kind understanding.
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="mailListMobileItem9">
+                        <div>
+                            <img src="files/icon_mail_sp.svg" class="img-fluid icon-mail-sp">
+                            <div class="d-inline-block height-from-to-mobile">
+                                <div>
+                                    <span
+                                        class="font-weight-bold d-inline-block text-truncate address-from-to-mobile">iii@example.com</span>
+                                    <span class="float-right"><img src="files/icon_clip.svg"
+                                            class="img-fluid icon-attachment-mobile">
+                                        <span>2019/12/31</span>
+                                        <img src="files/icon_arrow02.svg" class="icon-chevron-compact-right">
+                                    </span>
+                                    <span class="d-none">1607354400000</span>
+                                </div>
+                                <div>
+                                    <span
+                                        class="d-inline-block text-truncate address-from-to-mobile">nnn@example.com</span>
+                                    <span class="float-right"><span class="badge badge-dark"></span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="mailListMobileSubject9" class="d-inline-block text-truncate title-mobile">
+                            I love you
+                        </div>
+                        <div id="mailListMobileContent9" class="d-none">
+                            We would like to announce that our office
+                            will be closed from August 11 from 19, 2018 due to
+                            summer holiday.
+                            We will respond your email when we return to the office on August 20, 2018.
+                            Thank you very much for your kind understanding.
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="mailListMobileItem10">
+                        <div>
+                            <img src="files/icon_mail_sp.svg" class="img-fluid icon-mail-sp">
+                            <div class="d-inline-block height-from-to-mobile">
+                                <div>
+                                    <span
+                                        class="font-weight-bold d-inline-block text-truncate address-from-to-mobile">Pablo-Diego-@example.com,Pablo-Diego-@example.com</span>
+                                    <span class="float-right"><img src="files/icon_clip.svg"
+                                            class="img-fluid icon-attachment-mobile">
+                                        <span>2019/12/3</span>
+                                        <img src="files/icon_arrow02.svg" class="icon-chevron-compact-right">
+                                    </span>
+                                    <span class="d-none">1575313200000</span>
+                                </div>
+                                <div>
+                                    <span
+                                        class="d-inline-block text-truncate address-from-to-mobile">Pablo-Diego-José-Francisc@example.com,
+                                        Pablo-Diego-@example.com</span>
+                                    <span class="float-right"><span class="badge badge-dark"></span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="mailListMobileSubject10" class="d-inline-block text-truncate title-mobile">
+                            [info:888] ABC EQUIPMENT COMPANY
+                        </div>
+                        <div id="mailListMobileContent10" class="d-none">
+                            We would like to announce that our office
+                            will be closed from August 11 from 19, 2018 due to
+                            summer holiday.
+                            We will respond your email when we return to the office on August 20, 2018.
+                            Thank you very much for your kind understanding.
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Content modal for desktop -->
+    <div id="contentModalDesktop" class="modal fade" tabindex="-1" aria-labelledby="contentModalDesktop"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div id="mailListDesktopModalBody" class="modal-body">
+                    <hr id="mailListDesktopModalAllMark" />
+                    <div>All:</div>
+                    <div id="mailListDesktopModalMailBlock1">
+                        <div>
+                            <span class="font-weight-bold"> [ HR-888 ] Notice of official announcement</span><span
+                                class="float-right">0:20</span>
+                        </div>
+                        <div>
+                            <div class="d-inline-block">
+                                <div class="text-truncate height-from-to-modal">aaa@example.com</div>
+                                <div class="text-truncate height-from-to-modal">aaa@example.com</div>
+                            </div><span class="badge badge-dark float-right icon-margin-modal"></span><img
+                                src="files/icon_clip.svg"
+                                class="img-fluid icon-attachment-modal float-right icon-margin-modal invisible">
+                        </div>
+                        <div>
+                            We would like to announce that our office
+                            will be closed from August 11 from 19, 2018 due to
+                            summer holiday.
+                            We will respond your email when we return to the office on August 20, 2018.
+                            Thank you very much for your kind understanding.
+                        </div>
+                    </div>
+                    <hr />
+                    <div id="mailListDesktopModalMailBlock2">
+                        <div>
+                            <span class="font-weight-bold">[web:333] "Web Contact"</span><span
+                                class="float-right">0:10</span>
+                        </div>
+                        <div>
+                            <div class="d-inline-block">
+                                <div class="text-truncate height-from-to-modal">bbb.bbbb@example.com</div>
+                                <div class="text-truncate height-from-to-modal">yyy@example.com</div>
+                            </div><span class="badge badge-dark float-right icon-margin-modal"></span><img
+                                src="files/icon_clip.svg"
+                                class="img-fluid icon-attachment-modal float-right icon-margin-modal invisible">
+                        </div>
+                        <div>
+                            We would like to announce that our office
+                            will be closed from August 11 from 19, 2018 due to
+                            summer holiday.
+                            We will respond your email when we return to the office on August 20, 2018.
+                            Thank you very much for your kind understanding.
+                        </div>
+                    </div>
+                    <hr />
+                    <div id="mailListDesktopModalMailBlock3">
+                        <div>
+                            <span class="font-weight-bold">Happy New Year! Greetings
+                                for the New Year. </span><span class="float-right">0:00</span>
+                        </div>
+                        <div>
+                            <div class="d-inline-block">
+                                <div class="text-truncate height-from-to-modal">ccc@example.com</div>
+                                <div class="text-truncate height-from-to-modal">xxx@example.com</div>
+                            </div><span class="badge badge-dark float-right icon-margin-modal">+1</span><img
+                                src="files/icon_clip.svg"
+                                class="img-fluid icon-attachment-modal float-right icon-margin-modal">
+                        </div>
+                        <div>
+                            We would like to announce that our office
+                            will be closed from August 11 from 19, 2018 due to
+                            summer holiday.
+                            We will respond your email when we return to the office on August 20, 2018.
+                            Thank you very much for your kind understanding.
+                        </div>
+                    </div>
+                    <hr />
+                    <div id="mailListDesktopModalMailBlock4">
+                        <div>
+                            <span class="font-weight-bold">[HR-887(Revised: Office
+                                Expansion Project Team)]
+                                Notice of off... </span><span class="float-right">Jan 01</span>
+                        </div>
+                        <div>
+                            <div class="d-inline-block">
+                                <div class="text-truncate height-from-to-modal">ddd.dddd@example.com</div>
+                                <div class="text-truncate height-from-to-modal">vvv.vvv@example.com</div>
+                            </div><span class="badge badge-dark float-right icon-margin-modal"></span><img
+                                src="files/icon_clip.svg"
+                                class="img-fluid icon-attachment-modal float-right icon-margin-modal invisible">
+                        </div>
+                        <div>
+                            We would like to announce that our office
+                            will be closed from August 11 from 19, 2018 due to
+                            summer holiday.
+                            We will respond your email when we return to the office on August 20, 2018.
+                            Thank you very much for your kind understanding.
+                        </div>
+                    </div>
+                    <hr />
+                    <div id="mailListDesktopModalMailBlock5">
+                        <div>
+                            <span class="font-weight-bold">[Github] Logout page </span><span class="float-right">Jan
+                                01</span>
+                        </div>
+                        <div>
+                            <div class="d-inline-block">
+                                <div class="text-truncate height-from-to-modal">eee@example.com</div>
+                                <div class="text-truncate height-from-to-modal">sss@example.com</div>
+                            </div><span class="badge badge-dark float-right icon-margin-modal">+2</span><img
+                                src="files/icon_clip.svg"
+                                class="img-fluid icon-attachment-modal float-right icon-margin-modal invisible">
+                        </div>
+                        <div>
+                            We would like to announce that our office
+                            will be closed from August 11 from 19, 2018 due to
+                            summer holiday.
+                            We will respond your email when we return to the office on August 20, 2018.
+                            Thank you very much for your kind understanding.
+                        </div>
+                    </div>
+                    <hr />
+                    <div id="mailListDesktopModalMailBlock6">
+                        <div>
+                            <span class="font-weight-bold">［dev］ Postfix 3.1.12 /
+                                3.2.9 / 3.3.4 / 3.4.5 </span><span class="float-right">Jan 01</span>
+                        </div>
+                        <div>
+                            <div class="d-inline-block">
+                                <div class="text-truncate height-from-to-modal">fff.ffff@example.com</div>
+                                <div class="text-truncate height-from-to-modal">qqq.qqq@example.com</div>
+                            </div><span class="badge badge-dark float-right icon-margin-modal"></span><img
+                                src="files/icon_clip.svg"
+                                class="img-fluid icon-attachment-modal float-right icon-margin-modal invisible">
+                        </div>
+                        <div>
+                            We would like to announce that our office
+                            will be closed from August 11 from 19, 2018 due to
+                            summer holiday.
+                            We will respond your email when we return to the office on August 20, 2018.
+                            Thank you very much for your kind understanding.
+                        </div>
+                    </div>
+                    <hr />
+                    <div id="mailListDesktopModalMailBlock7">
+                        <div>
+                            <span class="font-weight-bold">Re: [Github] Brush-up on
+                                loading animation </span><span class="float-right">Jan 01</span>
+                        </div>
+                        <div>
+                            <div class="d-inline-block">
+                                <div class="text-truncate height-from-to-modal">ggg@example.com</div>
+                                <div class="text-truncate height-from-to-modal">ppp@example.com</div>
+                            </div><span class="badge badge-dark float-right icon-margin-modal"></span><img
+                                src="files/icon_clip.svg"
+                                class="img-fluid icon-attachment-modal float-right icon-margin-modal invisible">
+                        </div>
+                        <div>
+                            We would like to announce that our office
+                            will be closed from August 11 from 19, 2018 due to
+                            summer holiday.
+                            We will respond your email when we return to the office on August 20, 2018.
+                            Thank you very much for your kind understanding.
+                        </div>
+                    </div>
+                    <hr />
+                    <div id="mailListDesktopModalMailBlock8">
+                        <div>
+                            <span class="font-weight-bold">Workplace Summary for
+                                sample, Inc.: Jun 2 - Jun 9</span><span class="float-right">Jan 01</span>
+                        </div>
+                        <div>
+                            <div class="d-inline-block">
+                                <div class="text-truncate height-from-to-modal">hhh.hhh@example.com</div>
+                                <div class="text-truncate height-from-to-modal">ooo.ooo@example.com</div>
+                            </div><span class="badge badge-dark float-right icon-margin-modal"></span><img
+                                src="files/icon_clip.svg"
+                                class="img-fluid icon-attachment-modal float-right icon-margin-modal">
+                        </div>
+                        <div>
+                            We would like to announce that our office
+                            will be closed from August 11 from 19, 2018 due to
+                            summer holiday.
+                            We will respond your email when we return to the office on August 20, 2018.
+                            Thank you very much for your kind understanding.
+                        </div>
+                    </div>
+                    <hr />
+                    <div id="mailListDesktopModalMailBlock9">
+                        <div>
+                            <span class="font-weight-bold">I love you </span><span class="float-right">2019/12/31</span>
+                        </div>
+                        <div>
+                            <div class="d-inline-block">
+                                <div class="text-truncate height-from-to-modal">iii@example.com</div>
+                                <div class="text-truncate height-from-to-modal">nnn@example.com</div>
+                            </div><span class="badge badge-dark float-right icon-margin-modal"></span><img
+                                src="files/icon_clip.svg"
+                                class="img-fluid icon-attachment-modal float-right icon-margin-modal">
+                        </div>
+                        <div>
+                            We would like to announce that our office
+                            will be closed from August 11 from 19, 2018 due to
+                            summer holiday.
+                            We will respond your email when we return to the office on August 20, 2018.
+                            Thank you very much for your kind understanding.
+                        </div>
+                    </div>
+                    <hr />
+                    <div id="mailListDesktopModalMailBlock10">
+                        <div>
+                            <span class="font-weight-bold">[info:888] ABC EQUIPMENT
+                                COMPANY</span><span class="float-right">2019/12/3</span>
+                        </div>
+                        <div>
+                            <div class="d-inline-block">
+                                <div class="text-truncate height-from-to-modal">Pablo-Diego-@example.com</div>
+                                <div class="text-truncate height-from-to-modal">Pablo-Diego-José-Francisc@example.com,
+                                    Pablo-Diego-@example.com,Pablo-Diego-@example.com</div>
+                            </div><span class="badge badge-dark float-right icon-margin-modal"></span><img
+                                src="files/icon_clip.svg"
+                                class="img-fluid icon-attachment-modal float-right icon-margin-modal invisible">
+                        </div>
+                        <div>
+                            We would like to announce that our office
+                            will be closed from August 11 from 19, 2018 due to
+                            summer holiday.
+                            We will respond your email when we return to the office on August 20, 2018.
+                            Thank you very much for your kind understanding.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content section for mobile -->
+    <div id="contentSectionMobile" class="container d-none">
+        <div id="mailListMobileContentSectionSubject" class="font-weight-bold mt-3">
+
+        </div>
+        <hr />
+        <div id="mailListMobileContentSectionContent">
+
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+.calendar-icon {
+    height: calc(1.5em + .75rem + 2px);
+}
+
+.search-icon {
+    width: 22px;
+}
+
+.search-icon-mobile {
+    width: 18px;
+    vertical-align: bottom;
+}
+
+.search-hyphen-mobile {
+    width: 18px;
+    margin-bottom: 0;
+}
+
+.count-mail {
+    font-size: 1.5rem;
+}
+
+.count-mail-mobile {
+    font-size: 0.5rem;
+}
+
+.icon-arrow {
+    height: 8px;
+    margin-left: 10px;
+}
+
+.icon-arrow-right-margin {
+    margin-right: 10px;
+}
+
+.icon-left-margin {
+    margin-left: 10px;
+}
+
+.icon-attachment {
+    height: 10px;
+}
+
+.icon-attachment-mobile {
+    height: 14px;
+}
+
+.icon-attachment-modal {
+    height: 18px;
+}
+
+.icon-margin-modal{
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.icon-mail-sp {
+    margin-bottom: -2px;
+    height: 29px;
+    vertical-align: super;
+}
+
+.title-width-from-to {
+    max-width: 13vw;
+}
+
+.title-width-subject {
+    max-width: 40vw;
+}
+
+.button-height-mobile {
+    height: 32px;
+    margin-top: 5px;
+}
+
+.title-divider-mobile {
+    font-weight: initial;
+}
+
+.height-from-to-mobile {
+    font-size: 0.5rem;
+    width: 89vw;
+}
+
+.height-from-to-modal {
+    font-size: 0.5rem;
+    max-width: 25rem;
+}
+
+.address-from-to-mobile{
+    max-width: 65vw;
+}
+
+.title-mobile{
+    max-width: 90vw;
+}
+
+.float-right {
+    float: right;
+}
+
+.icon-chevron-compact-right {
+    width: 1em;
+    height: 1em;
+    vertical-align: baseline;
+}
+
+.flip-icon{
+    transform: rotate(180deg);
+}
+
+#tableHeaderMobile {
+    padding: 0.1rem;
+}
